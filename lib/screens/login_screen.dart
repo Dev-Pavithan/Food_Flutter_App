@@ -81,11 +81,9 @@ class _LoginScreenState extends State<LoginScreen> {
           
           // Main Content
           SafeArea(
-            child: Center(
-              child: AnimatedSwitcher(
-                duration: const Duration(milliseconds: 500),
-                child: _showSuccess ? _buildSuccessState() : _buildLoginForm(),
-              ),
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 500),
+              child: _showSuccess ? _buildSuccessState() : _buildLoginForm(),
             ),
           ),
         ],
@@ -204,7 +202,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _buildLoginForm() {
     return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.fromLTRB(30, 40, 30, 40),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -212,8 +210,8 @@ class _LoginScreenState extends State<LoginScreen> {
           Hero(
             tag: 'logo',
             child: Container(
-              height: 120,
-              width: 120,
+              height: 100,
+              width: 100,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
               ),
